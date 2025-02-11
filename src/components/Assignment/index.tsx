@@ -22,9 +22,9 @@ export function Assignment({
         if (!deadline) return "";
 
         const today = new Date();
-        today.setHours(0, 0, 0, 0); // Normalize today's date
+        today.setHours(0, 0, 0, 0);
         const deadlineDate = new Date(deadline);
-        deadlineDate.setHours(0, 0, 0, 0); // Normalize deadline date
+        deadlineDate.setHours(0, 0, 0, 0);
 
         const timeDiff = deadlineDate.getTime() - today.getTime();
         const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));

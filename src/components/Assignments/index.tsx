@@ -18,6 +18,7 @@ export function Assignments({
                                 onToggleCompletion,
                                 onDeleteAssignment,
                             }: AssignmentsProps) {
+
     const totalAssignments = assignments.length;
     const completedAssignments = assignments.filter(
         (assignment) => assignment.completed
