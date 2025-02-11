@@ -12,14 +12,17 @@ export interface Assignment {
 function App() {
     const [assignments, setAssignments] = useState<Assignment[]>([]);
 
+    const [idCounter, setIdCounter] = useState(1);
+
     const addAssignment = (title: string, deadline?: Date) => {
         const newAssignment: Assignment = {
-            id: Date.now(), // Unique ID (using timestamp)
+            id: idCounter,
             title,
             completed: false,
             deadline,
         };
         setAssignments([...assignments, newAssignment]);
+        setIdCounter(idCounter + 1);
     };
 
     const toggleCompletion = (id: number) => {
